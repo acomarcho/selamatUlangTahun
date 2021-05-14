@@ -3,6 +3,71 @@ body {
   margin: 0;
 }
 
+.container {
+  height: 100%;
+  margin: 0;
+  background-color: #ffd54f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: -apple-system,  BlinkMacSystemFont,  "Segoe UI",  Roboto,  Oxygen-Sans,  Ubuntu,  Cantarell,  "Helvetica Neue",  sans-serif;
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h1 {
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+.container li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.container li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+.container .message {
+  font-size: 4rem;
+  display: none;
+  padding: 1rem;
+}
+
+.container .emoji {
+  padding: 0 .25rem;
+}
+
+@media all and (max-width: 768px) {
+  .container h1 {
+    font-size: 1.5rem;
+  }
+  .container li {
+    font-size: 1.125rem;
+    padding: .75rem;
+  }
+  .container li span {
+    font-size: 3.375rem;
+  }
+}
+
+#fullPage {
+  display: none;
+}
+
 .s1 {
   background-color: #333;
 }
