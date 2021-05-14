@@ -15,6 +15,15 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.s1 h3 {
+  top: 12em;
+  font-size: 15px;
+  color: white;
+  position: relative;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .s2 {
   background: url("./foto.jpg");
   background-size: contain;

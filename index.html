@@ -4,26 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Happy Birthday!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.css" integrity="sha512-RVmrWua3k1yTDEOg4Yzs2bK5+Thh7nM6jrhDq/6/5/Mwa0JbYe4pP4YMK5sqghKz01T3DgrwYc57Jaf1PSurCg==" crossorigin="anonymous" />
     <link rel="stylesheet" href="cake.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Audio -->
-    <audio src="./SelamatUlangTahun.mp3"></audio>
-    <script>
-        window.addEventListener("DOMContentLoaded", event => {
-            const audio = document.querySelector("audio");
-            audio.volume = 0.2;
-            audio.play();
-            });
-    </script>
-
     <!-- Site -->
     <div id="fullPage">
         <div class="section s1">
-            <div class="cake">
+            <div class="cake" onclick="playAudio()">
                 <div class="plate"></div>
                 <div class="layer layer-bottom"></div>
                 <div class="layer layer-middle"></div>
@@ -37,6 +27,7 @@
                 </div>
             </div>
             <h1>Happy 19th Birthday, Dina!</h1>
+            <h3 id ='cakeText'>Click the cake!</h3>
         </div>
         <div class="section s2">
             <canvas id="canvas">Canvas is not supported in your browser.</canvas>
@@ -57,10 +48,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
 
     <script>
+        let x = false;
+        const audio = new Audio('./SelamatUlangTahun.mp3');
+
         new fullpage('#fullPage', {
             autoScrolling: true,
             scrollingSpeed: 1000
         })
+
+        function playAudio() {
+            if (x === false) {
+                audio.play();
+                x = true;
+                document.querySelector('#cakeText').textContent = "Click the cake to stop the music!";
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+                x = false;
+                document.querySelector('#cakeText').textContent = "Click the cake!";
+            }     
+        }
     </script>
 
     <!-- Canvas -->
